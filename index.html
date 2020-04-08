@@ -6,10 +6,16 @@
     <title>Dashboard | App</title>
 
     <link rel="stylesheet" href="index.css">
+    
     <!-- <script defer src="index.js"></script> -->
-
+    <!-- libs -->
+    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
     <!-- scripts -->
+    <script defer src="modal.js"></script>
     <script defer src="forms.js"></script>
+    <script defer src="preview.js"></script>
+    <script defer src="dash.js"></script>
+
 </head>
 <body>
 
@@ -18,27 +24,19 @@
 
         <!-- nav -->
         <nav class="nav">
-            
             <!-- elmnts -->
             <div class="elmnts">
                 <!-- title -->
-                <h2>Trello Dashboard Clone</h2>
-                <p>Javascript Application 2020 - Redesign</p>
+                <h2>Dashpax</h2>
+                <p>Management System</p>
                 <!-- title -->
             </div>
-            
             <div class="elmnts">
                 <!-- app links -->
                 <ul>
-                    <li>
-                        <a href="#">homepage</a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="">login</a>
-                    </li>
-                    <li>
-                        <a href="#">dashboard</a>
-                    </li>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="#" class="link_login">account</a></li>
+                    <li><a href="#" onclick="view_dashboard()">dashboard</a></li>
                 </ul>
                 <!-- app links -->
             </div>
@@ -46,62 +44,102 @@
         </nav>
         <!-- nav -->
 
-        <!-- homepage -->
-        <section class="content" id="content_home">
-            <!-- elmnts -->
-            <div class="elmnts">
-                <h1>Welcome To Hypnotyx Development</h1>
-                <p>Home to cloned & refactored systems & applications</p>
-            </div>
-            <div class="elmnts">
-                <button class="btn_login" id="btn_login">Login</button>
-                
-            </div>
-            <div class="elmnts">
-                <!-- articles -->
-                <article class="article">
+        <!-- content -->
+        <section class="content">
+
+            <!-- article -->
+            <article class="article" id="dash" style="display:none"></article>
+            
+            <article class="article" id="info">
+                <!-- elmnts -->
+                <div class="elmnts">
                     <h2>Dashpax</h2>
+                    <p>Desktop Management Application</p>
 
-                    <ul>
-                        <li>Create tasks to manage</li>
-                        <li>Edit & complete tasks</li>
-                        <li>Delete tasks not in use</li>
+                    <p>
+                        A user friendly customizable dashboard, build with Javascript.
+                        <br>
+                        This desktop features :
+                    </p>
+                    <ul class="features">
+                        <li>
+                            create & update specific tasks
+                        </li>
+                        <li>
+                            visualize timelines and project deadlines
+                        </li>
+                        <li>
+                            share comments & feedback in real time
+                        </li>
                     </ul>
-
-                </article>
-                
-                <article class="article">
-                    <h2>Features</h2>
-
-                    <ul>
-                        <li>Update & view feeds</li>
-                        <li>Monitor projects & assignments</li>
-                        <li>Track workflow & progress</li>
-                    </ul>
-
-                </article>
-
-                <article class="article">
+                </div>
+                <div class="elmnts">
                     <h2>Preview</h2>
+                    <p>Management system & tooling</p>
+                    
+                    <!-- slideshow -->
+                    <div class="preview">
+                        <!-- panels -->
+                        <div class="panels">
+                            <!-- <img src="img/1.jpg" alt="1"> -->
+                            <img src="img/1.webp" alt="1">
+                        </div>
+                        <div class="panels">
+                            <!-- <img src="img/2.jpg" alt="2"> -->
+                            <img src="img/2.webp" alt="2">
+                        </div>
+                        <div class="panels">
+                            <!-- <img src="img/3.jpg" alt="3"> -->
+                            <img src="img/3.webp" alt="3">
+                        </div>
+                        <!-- panels -->
+                    </div>
+                    <!-- slideshow -->
+                </div>
+                <div class="elmnts">
+                    <h2>Account</h2>
+                    <p>login for dashboard access</p>
+                    <p>
+                        Login or Register now to obtain full access
+                        to the dashboard tool and all featured addons.
+                    </p>
+                    
+                    <button class="btn_login" id="btn_login">Login</button>
+                </div>
+                <!-- elmnts -->
+            </article>
+            <!-- article -->
 
-                    <div class="preview"></div>
-                    <div class="preview"></div>
-
-                </article>
-                <!-- articles -->
-
-           </div>
-           <!-- elmnts -->
         </section>
         <!-- content -->
+
+        
+        
+
+        <!-- footer -->
+        <footer class="footer">
+            <!-- elmnts -->
+            <div class="elmnts">
+                <h5>Dashpax</h5>
+                <p>by Hypnotyx Developers</p>
+            </div>
+            <div class="elmnts">
+                <!-- icon -->
+                <p>2020 &copy;</p>
+            </div>
+            <!-- elmnts -->
+        </footer>
+        <!-- footer -->
         
         <!-- login -->
         <section class="modal" style="display:none">
             
+            <!-- elmnts -->
             <div class="elmnts">
                 <h2>Account</h2>
                 <p>Dashboard Management System</p>
 
+                <!-- login | register form -->
                 <form action="" class="form" id="form_login" style="display:none">
                     <h3>Account Login</h3>
                     
@@ -111,19 +149,26 @@
                     <button class="btn_submit">Submit</button>
 
 
-                    <p class="p_noacc" style="display: none">Dont have an account? Register <a href="" class="btn_noacc">Here</a></p>
-                    <p class="p_acc" style="display: none">Already have an account? Login <a href="" class="btn_acc">Here</a></p>
+                    <p class="p_noacc" style="display: none">Dont have an account? Register <a href="" class="btn_noacc"> Here</a></p>
+                    <p class="p_acc" style="display: none">Already have an account? Login <a href="" class="btn_acc"> Here</a></p>
                 </form>
-
-                
-                
+                <!-- login | register form -->
             </div>
+            <!-- elmnts -->
         
         </section>
         <!-- login -->
 
         <!-- dashboard -->
-        <section class="dashboard"></section>
+        <section class="dashboard" id="dashboard" style="display:none">
+            <div class="elmnts">
+                <h2>Dashboard</h2>
+                <p>Create an evolving system today</p>
+            </div>
+            <div class="elmnts"></div>
+            <div class="elmnts"></div>
+            
+        </section>
         <!-- dashboard -->
 
     
