@@ -1,0 +1,151 @@
+/* global : reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+/* global : variables */
+:root {
+    /* spacing */
+    --sp-sm: 1%;
+    --sp-md: 5%;
+    --sp-lg: 15%;
+
+    /* color */
+    --main: #000;
+    --alt: #BBB;
+    --sub: #FFF;
+    --acc: rgb(10, 177, 93);
+
+    /* === dev borders === */
+
+    --wireframe: 3px solid darkblue;
+    --component: 3px dotted darkgreen;
+    --debugging: 3px dotted darkred;
+
+}
+
+/* media : desktop [ 900px ] */
+
+@media screen and (min-width:900px) {
+    /* nav : nav */
+    .nav a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        color: var(--acc);
+    }
+    .nav i {
+        text-align: center;
+        padding: var(--sp-md);
+        color: var(--acc);
+
+        /* border: var(--debugging); */
+    }
+
+    /* desktop */
+    .link_desk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* mobile */
+
+    .link_mobl {
+        display: none;
+    }
+    
+    /* article : article */
+    .article {
+        height: 100%;
+        width: 100%;
+        max-height: 100vh;
+        max-width: 100vw;
+
+    }
+    .article .elmnts {
+        border: var(--debugging);
+        
+    }
+    .article .elmnts:nth-child(1) {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    .article .elmnts:nth-child(2) {
+        grid-column: span 3;
+        grid-row: span 2;
+        
+    }
+    .article .elmnts:nth-child(3) {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+
+    .article .elmnts p {
+        padding: var(--sp-md);
+    }
+
+    
+
+    /* form : form */
+    .form {
+        margin: auto;
+        grid-column: span 6;
+        grid-row: span 3;
+        
+        max-width: 750px;
+        height: 100%;
+        
+        border: var(--debugging);
+    }
+    
+
+
+
+
+
+
+
+
+
+    .content {
+        /* background: rgb(79,224,114); */
+        background: linear-gradient(157deg, rgba(79,224,114,1) 35%, rgba(236,172,233,1) 50%); 
+    }
+
+
+
+
+
+
+
+
+    /* btn : login */
+    .btn_login {
+        margin: 0;
+        padding:  var(--sp-sm);
+        max-width: 180px;
+    }
+    /* div : preview */
+    .preview {
+        max-height: 20vh;
+    }
+    .prevH2, .prevP {display: none;}
+    /* ul : features */
+    .features {
+        padding: 0;
+    }
+    .features li {
+        padding: 0;
+    }
+
+    
+}

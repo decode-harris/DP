@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | App</title>
 
-    <link rel="stylesheet" href="index.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/media.css">
     
-    <!-- <script defer src="index.js"></script> -->
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+    
     <!-- scripts -->
-    <script defer src="modal.js"></script>
-    <script defer src="forms.js"></script>
-    <script defer src="preview.js"></script>
-    <script defer src="dash.js"></script>
+    <script defer src="scripts/home.js"></script>
+    <script defer src="scripts/forms.js"></script>
+    <script defer src="scripts/account.js"></script>
+    <script defer src="scripts/validation.js"></script>
+    <script defer src="scripts/preview.js"></script>
+    <script defer src="scripts/dash.js"></script>
+
+    <!-- <script defer src="modal.js"></script> -->
 
 </head>
 <body>
 
     <!-- app -->
     <section class="app" id="app">
-
-        <!-- nav -->
-        <nav class="nav">
+        <!-- header -->
+        <header class="header">
+            
             <!-- elmnts -->
             <div class="elmnts">
                 <!-- title -->
@@ -32,25 +39,55 @@
                 <!-- title -->
             </div>
             <div class="elmnts">
-                <!-- app links -->
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="#" class="link_login">account</a></li>
-                    <li><a href="#" onclick="view_dashboard()">dashboard</a></li>
-                </ul>
-                <!-- app links -->
+            
+                <!-- nav -->
+                <nav class="nav">
+                    <!-- links : desktop -->
+                    <div class="link_desk">
+                        <a href="" class="link_home">
+                            <i class="fas fa-home"></i>
+                            home
+                        </a>
+                        <a href="" class="link_login">
+                            <i class="fas fa-user"></i>
+                            user
+                        </a>
+                        <a href="#" onclick="view_dashboard()">
+                            <i class="fas fa-chart-line"></i>
+                            dash
+                        </a>
+                    </div>
+                    <!-- links : desktop -->
+                    <div class="link_mobl">
+                        <a href="" class="mobl_home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <a href="" class="mobl_login">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="#" class="mobl_dash" onclick="view_dashboard()">
+                            <i class="fas fa-chart-line"></i>
+                        </a>
+                        
+                    </div>
+
+                </nav>
+                <!-- nav -->
+
             </div>
             <!-- elmnts -->
-        </nav>
-        <!-- nav -->
+
+        </header>
+        <!-- header -->
+        
 
         <!-- content -->
-        <section class="content">
+        <section class="content" id="content">
 
             <!-- article -->
             <article class="article" id="dash" style="display:none"></article>
             
-            <article class="article" id="info">
+            <article class="article" id="info" >
                 <!-- elmnts -->
                 <div class="elmnts">
                     <h2>Dashpax</h2>
@@ -61,61 +98,64 @@
                         <br>
                         This desktop features :
                     </p>
-                    <ul class="features">
-                        <li>
-                            create & update specific tasks
-                        </li>
-                        <li>
-                            visualize timelines and project deadlines
-                        </li>
-                        <li>
-                            share comments & feedback in real time
-                        </li>
-                    </ul>
-                </div>
-                <div class="elmnts">
-                    <h2>Preview</h2>
-                    <p>Management system & tooling</p>
-                    
-                    <!-- slideshow -->
-                    <div class="preview">
+                     <!-- slideshow -->
+                     <div class="preview">
                         <!-- panels -->
                         <div class="panels">
                             <!-- <img src="img/1.jpg" alt="1"> -->
                             <img src="img/1.webp" alt="1">
+                            <p>create & update specific tasks</p>
                         </div>
                         <div class="panels">
                             <!-- <img src="img/2.jpg" alt="2"> -->
                             <img src="img/2.webp" alt="2">
+                            <p>visualize timelines and project deadlines</p>
                         </div>
                         <div class="panels">
                             <!-- <img src="img/3.jpg" alt="3"> -->
                             <img src="img/3.webp" alt="3">
+                            <p>share comments & feedback in real time</p>
                         </div>
                         <!-- panels -->
                     </div>
                     <!-- slideshow -->
                 </div>
+
+                    
                 <div class="elmnts">
-                    <h2>Account</h2>
+                    <h2>Account Login</h2>
                     <p>login for dashboard access</p>
+                    <button class="btn_login" id="btn_login">Login</button>
                     <p>
                         Login or Register now to obtain full access
                         to the dashboard tool and all featured addons.
                     </p>
-                    
-                    <button class="btn_login" id="btn_login">Login</button>
                 </div>
                 <!-- elmnts -->
+            </article>
+
+            <article class="article" id="account" style="display:none">
+                <!-- login | register form -->
+                <form action="" class="form" id="form_login" style="display:none">
+                    <h3>Account Login</h3>
+                    
+                    <input type="text" name="username" id="username" placeholder="username ...">
+                    <input type="text" name="email" id="email" placeholder="email ...">
+                    <input type="password" name="password" id="password"placeholder="password ...">
+                    <button class="btn_submit">Submit</button>
+
+
+                    <p class="p_noacc" style="display: none">Dont have an account? Register <a href="" class="btn_noacc"> Here</a></p>
+                    <p class="p_acc" style="display: none">Already have an account? Login <a href="" class="btn_acc"> Here</a></p>
+                </form>
+                <!-- login | register form -->
+            
             </article>
             <!-- article -->
 
         </section>
         <!-- content -->
-
         
-        
-
         <!-- footer -->
         <footer class="footer">
             <!-- elmnts -->
@@ -139,20 +179,7 @@
                 <h2>Account</h2>
                 <p>Dashboard Management System</p>
 
-                <!-- login | register form -->
-                <form action="" class="form" id="form_login" style="display:none">
-                    <h3>Account Login</h3>
-                    
-                    <input type="text" name="username" id="username" placeholder="username ...">
-                    <input type="text" name="email" id="email" placeholder="email ...">
-                    <input type="password" name="password" id="password"placeholder="password ...">
-                    <button class="btn_submit">Submit</button>
-
-
-                    <p class="p_noacc" style="display: none">Dont have an account? Register <a href="" class="btn_noacc"> Here</a></p>
-                    <p class="p_acc" style="display: none">Already have an account? Login <a href="" class="btn_acc"> Here</a></p>
-                </form>
-                <!-- login | register form -->
+               
             </div>
             <!-- elmnts -->
         
@@ -161,18 +188,37 @@
 
         <!-- dashboard -->
         <section class="dashboard" id="dashboard" style="display:none">
+            <!-- elmnts -->
             <div class="elmnts">
                 <h2>Dashboard</h2>
                 <p>Create an evolving system today</p>
             </div>
-            <div class="elmnts"></div>
-            <div class="elmnts"></div>
+            <div class="elmnts">
+                <!-- form setup -->
+                <form action="" class="form" id="form_setup">
+                    <h3>Setup</h3>
+
+                    <input type="text" id="task">
+                    <input type="text" id="desc">
+                    <button class="btn_start">Start</button>
+
+                </form>
+                <!-- form setup -->
+
+                <!-- output list -->
+                <ul id="form_output">
+                    <h4 id="list_title"></h4>
+                </ul>
+                <!-- output list -->
+            </div>
+            <div class="elmnts">
+                
+            </div>
+            <!-- elmnts -->
             
         </section>
         <!-- dashboard -->
-
     
-
     </section>
     <!-- app -->
     
