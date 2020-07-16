@@ -1,2 +1,6 @@
-# dashpax
-Dashboard System
+# DP 
+
+DashPax
+
+Dashboard Management System & Web Application
+
