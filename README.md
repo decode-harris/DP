@@ -1,6 +1,7 @@
-# DP 
+# DPS
+Dash Pax System 
+Dashboard Management Application
 
-DashPax
+by Christopher Harris
 
-Dashboard Management System & Web Application
 
